@@ -59,7 +59,7 @@ return `<div class='m-2'>
         <div class="card-body">
             <h6 class="card-text">${conf_data.description}</h6>
             <p class="card-text">${conf_data.meeting_date}</p>
-            <p class="card-text">${conf_data.members.map(member => `${member.user.first_name} ${member.user.last_name}`).join(' ')}</p>
+            <p class="card-text">Members: ${conf_data.members.map(member => `${member.user.first_name} ${member.user.last_name}`).join(', ')}</p>
             <p class="card-text">Created by: ${conf_data.created_by.user.first_name} ${conf_data.created_by.user.last_name}</p>
             <button type="button" class="btn btn-primary" onClick='startJitsiMeeting(this)' data-room-name='${conf_data.room_name}' data-title='${conf_data.title}' data-toggle="modal" data-target="#jitsiModal">
             Join Meeting
@@ -79,10 +79,10 @@ async function createConferenceCardTemplate(conf) {
         'members': [],
         'created_by': await GetVolunteer(conf.created_by)
     }
-    await conf.members.forEach(async member => {
-        volunteer = await GetVolunteer(member)
-        conf_data.members.push(volunteer)
-    })
+    for (const member of conf.members) {
+        const volunteer = await GetVolunteer(member)
+        conf_data.members.push(volunteer) 
+    }
     return renderConferenceCard(conf_data)
 }
 
