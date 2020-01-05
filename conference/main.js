@@ -71,7 +71,6 @@ return `<div class='m-2'>
 }
 
 async function createConferenceCardTemplate(conf) {
-    console.log(moment.utc(conf.meeting_date).format('dddd, MMMM Do YYYY, h:mm:ss a'))
     const conf_data = {
         'room_name': conf.meeting_name,
         'title': conf.title,
@@ -88,7 +87,6 @@ async function createConferenceCardTemplate(conf) {
 }
 
 function appendConferenceCard(card) {
-    console.log(card)
     $('#conference-cards').append(card)
 }
 
