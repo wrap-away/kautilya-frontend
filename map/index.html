@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+
+    <style type="text/css">
+    body {
+        padding-top: 50px;
+    }
+
+    .starter-template {
+        padding: 40px 15px;
+        text-align: center;
+    }
+
+    #mapid {
+        height: 480px;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+
+                <h1>Events happening near you.</h1>
+                <p class="lead">Using the map, you can find all of the interesting events happening nearby you such as Meetups, Conferences, 
+                Re-training, donation, etc.</p>
+            </div>
+
+            <div class="col-md-6">
+                <h1>Your Location</h1>
+                <p class="lead">Please give permissions to allow the app to use your localtion coordinates to offer you a localised view of the map.</p>
+                <button id="location_perm_button" class="btn btn-success">Locate Me</button>
+                <hr>
+                <p id="latitude"></p>
+                <p id="longitude"></p>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div id="eventsListDiv" class="col-md-3">
+                <h3>Events:</h3>
+            </div>
+
+            <div class="col-md-9">
+                <div id="mapid"></div>
+            </div>
+        </div>
+        <!-- /.container -->
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+        <script src="index.js"></script>
+    </body>
+
+</html>

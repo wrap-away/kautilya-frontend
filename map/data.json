@@ -1,0 +1,38 @@
+[
+	{
+		"name": "Shiksha Meetup",
+		"type": "meetup",
+		"latitide": 0.00,
+		"longitude": 0.00
+	}, {
+		"name": "Gurukul Vidhya Awareness",
+		"type": "conference",
+		"latitide": 0.00,
+		"longitude": 0.00
+	}, {
+		"name": "Education For All",
+		"type": "meetup",
+		"latitide": 0.00,
+		"longitude": 0.00
+	}, {
+		"name": "Cry.org - Kids Padhai",
+		"type": "bootcamp",
+		"latitide": 0.00,
+		"longitude": 0.00
+	}, {
+		"name": "Books Re-Distribution",
+		"type": "donation",
+		"latitide": 0.00,
+		"longitude": 0.00
+	}, {
+		"name": "Hands On Training: Computers",
+		"type": "bootcamp",
+		"latitide": 0.00,
+		"longitude": 0.00
+	}, {
+		"name": "Shiksha Meetup",
+		"type": "meetup",
+		"latitide": 0.00,
+		"longitude": 0.00
+	}
+]
