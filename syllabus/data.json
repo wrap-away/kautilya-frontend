@@ -1,4 +1,4 @@
-var data = [
+[
     {
         "Grade 1": {
             "Maths": {
@@ -7,7 +7,7 @@ var data = [
             },
             "Science": {
                 "chapters": ["Plans", "Sense Organs", "Parts of Body", "Water", "Food"],
-                "link": "https://www.youtube.com/playlist?list=PLiPy3hM238v7e0PSPe4TcIWcvC7MR3pBQ"
+                "link": "PLiPy3hM238v7e0PSPe4TcIWcvC7MR3pBQ"
             },
             "English": {
                 "chapters": ["Nouns", "Verbs"]
@@ -22,7 +22,7 @@ var data = [
             },
             "Science": {
                 "chapters": ["Uses of Plants", "World of Plants", "Animal Life", "Air Around Us"],
-                "link": "https://www.youtube.com/playlist?list=PLiPy3hM238v4DqsRMNMonZl0ghikIfSym"
+                "link": "PLiPy3hM238v4DqsRMNMonZl0ghikIfSym"
             },
             "English": {
                 "chapters": []
@@ -37,7 +37,7 @@ var data = [
             },
             "Science": {
                 "chapters": ["Eating Habits of Animals", "Rocks and Soil", "What are Things Made Of", "Living & Non-Living"],
-                "link": "https://www.youtube.com/playlist?list=PLiPy3hM238v58CVqiEjzqy1nH_4R_Lmu6"
+                "link": "PLiPy3hM238v58CVqiEjzqy1nH_4R_Lmu6"
             },
             "English": {
                 "chapters": []
@@ -52,7 +52,7 @@ var data = [
             },
             "Science": {
                 "chapters": ["The Solar System", "Force, Work, & Energy", "Adaptations"],
-                "link": "https://www.youtube.com/playlist?list=PLiPy3hM238v6LSYaBoQXTOyGj4S_h0wa3"
+                "link": "PLiPy3hM238v6LSYaBoQXTOyGj4S_h0wa3"
             },
             "English": {
                 "chapters": []
@@ -67,7 +67,7 @@ var data = [
             },
             "Science": {
                 "chapters": ["Environmental Sanitation", "Volcanoes, Eathquakes & Tidalwaves", "Sun, Moon & Earth"],
-                "link": "https://www.youtube.com/playlist?list=PLiPy3hM238v4tM7_QCKJqK7KzZomWKUe0"
+                "link": "PLiPy3hM238v4tM7_QCKJqK7KzZomWKUe0"
             },
             "English": {
                 "chapters": []
@@ -82,11 +82,11 @@ var data = [
             },
             "Physics": {
                 "chapters": ["Wonders of Light", "Magnets"],
-                "link": "https://www.youtube.com/playlist?list=PLiPy3hM238v4pEJzYgWX6DQ6Oi2F6f-P6"
+                "link": "PLiPy3hM238v4pEJzYgWX6DQ6Oi2F6f-P6"
             },
             "Chemistry": {
                 "chapters": ["Air & Water for Life", "Food and its components", "Things around Us"],
-                "link": "https://www.youtube.com/watch?v=FlkH5GJ2fTM&list=PLiPy3hM238v6_fKRCQRXe6tjqk8Nrvbkd"
+                "link": "PLiPy3hM238v6_fKRCQRXe6tjqk8Nrvbkd"
             },
             
             "English": {
@@ -103,12 +103,12 @@ var data = [
             },
             "Physics": {
                 "chapters": ["Light", "Electric Current", "How Things Move"],
-                "link": "https://www.youtube.com/playlist?list=PLiPy3hM238v4jr2-5BAl8JjgKgwbBzYFe"
+                "link": "PLiPy3hM238v4jr2-5BAl8JjgKgwbBzYFe"
             },
             "Chemistry": {
                 "chapters": ["Heat and Temperature", "Structure of Matter", "Acids, Bases and Salts",
                             "Materials of Daily Use"],
-                "link": "https://www.youtube.com/playlist?list=PLiPy3hM238v7cAItpTOJWroywXCONutyZ"
+                "link": "PLiPy3hM238v7cAItpTOJWroywXCONutyZ"
             },
             "English": {
                 "chapters": []
@@ -124,16 +124,16 @@ var data = [
             },
             "Physics": {
                 "chapters": ["Solar System", "Sound", "Friction", "Force and Pressure", "Light and Electric Current"],
-                "link": "https://www.youtube.com/playlist?list=PLiPy3hM238v6f3vFtQNyu5HFrQSQUeVOw"
+                "link": "PLiPy3hM238v6f3vFtQNyu5HFrQSQUeVOw"
             },
             "Chemistry": {
                 "chapters": ["Combustion and flame", "Coal and Petroleum", "Metals and Non-Metals",
                             "Synthetic fibres and plastics"],
-                "link": "https://www.youtube.com/playlist?list=PLiPy3hM238v5sNF1UY9aL-eOZg66hSlDK"
+                "link": "PLiPy3hM238v5sNF1UY9aL-eOZg66hSlDK"
             },
             "English": {
                 "chapters": []
             }
         }
     }
-];
+]

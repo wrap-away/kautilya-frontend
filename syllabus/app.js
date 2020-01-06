@@ -1,5 +1,10 @@
+var data
+
 $(document).ready(function() {
-    populateSidebar()
+    getData().then(function(response) {
+        data = response
+        populateSidebar()
+    })
 })
 
 function populateSidebar(){
@@ -32,14 +37,23 @@ function showSyllabus(grade) {
 
 
         var col_md_6_2 = document.createElement('div')
-        col_md_6_2.setAttribute("class", "col-md-6")
+        col_md_6_2.setAttribute("class", "col-md-6 pb-4")
         row.appendChild(col_md_6_2)
 
 
         var subjectHeader = document.createElement('h3')
         var subjectTitle = document.createElement('a')
         subjectTitle.innerText = subject
-        subjectTitle.setAttribute("href", data[grade][key][subject].link)
+        subjectLink = data[grade][key][subject].link
+        youtubePlaylistRegex = /^[a-zA-Z0-9_-]*$/
+        
+        if (youtubePlaylistRegex.test(subjectLink)) {
+            playlistLink = "https://www.youtube.com/playlist?list=" + subjectLink
+            subjectTitle.setAttribute("href", playlistLink)
+        } else {
+            subjectTitle.setAttribute("href", subjectLink)
+        }
+        
         subjectTitle.setAttribute("target", "_blank")
         subjectHeader.appendChild(subjectTitle)
 
@@ -54,14 +68,18 @@ function showSyllabus(grade) {
         }
         col_md_6_1.appendChild(chaptersList)
 
-        // as an example.
-        // <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLiPy3hM238v58CVqiEjzqy1nH_4R_Lmu6" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        iframe = document.createElement("iframe")
-        iframe.setAttribute("width", 560)
-        iframe.setAttribute("height", 315)
-        iframe.setAttribute("src", "https://www.youtube.com/embed/videoseries?list=PLiPy3hM238v58CVqiEjzqy1nH_4R_Lmu6")
+        if (youtubePlaylistRegex.test(subjectLink) && subjectLink) {
+            iframe = document.createElement("iframe")
+            iframe.setAttribute("width", 560)
+            iframe.setAttribute("height", 315)
+            iframeLink = "https://www.youtube.com/embed/videoseries?list=" + subjectLink
+            iframe.setAttribute("src", iframeLink)
+            iframe.setAttribute("frameborder", 0)
+            iframe.setAttribute("allow", "allow=accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture")
+            iframe.setAttribute("allowfullscreen", "")
 
-        col_md_6_2.appendChild(iframe)
+            col_md_6_2.appendChild(iframe)
+        }
 
     }
 }
@@ -71,7 +89,11 @@ function deleteChildNodes(node) {
 }
 
 $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
+    e.preventDefault()
+    $("#wrapper").toggleClass("toggled")
+})
 
+async function getData() {
+    data = await fetch('data.json')
+    return await data.json()
+}
