@@ -1,0 +1,28 @@
+{
+	"total_ngos_connected": 23,
+	"total_volunteers_connected": 2540,
+	"total_centers_connected": 43,
+	"total_kids_helped": 95422,
+	"revenue": {
+		"donation": [165, 180, 70, 69, 77, 57, 125, 165, 172, 91, 173, 138, 155, 89, 50, 161, 65, 163, 160, 103, 114, 185, 125, 196, 183, 64, 137, 95, 112, 175],
+		"min_donation": [65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65]
+	},
+	"social_media": {
+		"fb_likes": "56k",
+		"fb_shares": "6k",
+		"twitter_followers": "21k",
+		"twitter_tweets": "3k",
+		"linkedin_connections": "500+",
+		"linkedin_posts": "789"
+	},
+	"stats": {
+		"stat_teachers": "1231",
+		"stat_kids": "60123",
+		"stat_boys": "41531",
+		"stat_girls": "18592",
+		"stat_age_labels": ["0-5", "5-8", "8-12", "12-16", "16-20"],
+		"stat_age_values": [10, 25, 40, 20, 5],
+		"stat_subject_hours_labels": ["English", "Maths", "Science", "Local Language", "Misc"],
+		"stat_subject_hours": [25, 35, 10, 20, 10]
+	}
+}

@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/free.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    
+    <!-- CoreUI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+
+    <title>Kautilya Analytics</title>
+  </head>
+  <body class="c-app">
+    <div class="c-wrapper">
+        <div class="c-body">
+        <main class="c-main">
+          <div class="container-fluid">
+            <div class="fade-in">
+              <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card text-white bg-primary">
+                    <div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
+                      <div>
+                        <div id="total_ngos_connected" class="text-value-lg"></div>
+                        <div>Total NGOs Connected</div>
+                      </div>
+                    </div>
+                    <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
+                      <canvas class="chart" id="card-chart1" height="70"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card text-white bg-info">
+                    <div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
+                      <div>
+                        <div id="total_volunteers_connected" class="text-value-lg"></div>
+                        <div>Total Volunteers Connected</div>
+                      </div>
+                    </div>
+                    <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
+                      <canvas class="chart" id="card-chart2" height="70"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card text-white bg-warning">
+                    <div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
+                      <div>
+                        <div id="total_centers_connected" class="text-value-lg"></div>
+                        <div>Total Centers Connected</div>
+                      </div>
+                    </div>
+                    <div class="c-chart-wrapper mt-3" style="height:70px;">
+                      <canvas class="chart" id="card-chart3" height="70"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-lg-3">
+                  <div class="card text-white bg-danger">
+                    <div class="card-body card-body pb-0 d-flex justify-content-between align-items-start">
+                      <div>
+                        <div id="total_kids_helped" class="text-value-lg"></div>
+                        <div>Total Kids Helped</div>
+                      </div>
+                    </div>
+                    <div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
+                      <canvas class="chart" id="card-chart4" height="70"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+              </div>
+              <!-- /.row-->
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <h4 class="card-title mb-0">Money Raised</h4>
+                      <div class="small text-muted">Jan 2019</div>
+                    </div>
+                    <div class="btn-toolbar d-none d-md-block" role="toolbar" aria-label="Toolbar with buttons">
+                    </div>
+                  </div>
+                  <div class="c-chart-wrapper" style="height:300px;margin-top:40px;">
+                    <canvas class="chart" id="main-chart" height="300"></canvas>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-->
+              <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-header bg-facebook content-center">
+                      <svg class="c-icon c-icon-3xl text-white my-4">
+                        <use xlink:href="vendors/@coreui/icons/svg/brand.svg#cib-facebook-f"></use>
+                      </svg>
+                      <div class="c-chart-wrapper">
+                        <canvas id="social-box-chart-1" height="90"></canvas>
+                      </div>
+                    </div>
+                    <div class="card-body row text-center">
+                      <div class="col">
+                        <div id="fb_likes" class="text-value-xl"></div>
+                        <div class="text-uppercase text-muted small">Likes</div>
+                      </div>
+                      <div class="c-vr"></div>
+                      <div class="col">
+                        <div id="fb_shares" class="text-value-xl"></div>
+                        <div class="text-uppercase text-muted small">Shares</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-header bg-twitter content-center">
+                      <svg class="c-icon c-icon-3xl text-white my-4">
+                        <use xlink:href="vendors/@coreui/icons/svg/brand.svg#cib-twitter"></use>
+                      </svg>
+                      <div class="c-chart-wrapper">
+                        <canvas id="social-box-chart-2" height="90"></canvas>
+                      </div>
+                    </div>
+                    <div class="card-body row text-center">
+                      <div class="col">
+                        <div id="twitter_followers" class="text-value-xl"></div>
+                        <div class="text-uppercase text-muted small">followers</div>
+                      </div>
+                      <div class="c-vr"></div>
+                      <div class="col">
+                        <div id="twitter_tweets" class="text-value-xl"></div>
+                        <div class="text-uppercase text-muted small">tweets</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-header bg-linkedin content-center">
+                      <svg class="c-icon c-icon-3xl text-white my-4">
+                        <use xlink:href="vendors/@coreui/icons/svg/brand.svg#cib-linkedin"></use>
+                      </svg>
+                      <div class="c-chart-wrapper">
+                        <canvas id="social-box-chart-3" height="90"></canvas>
+                      </div>
+                    </div>
+                    <div class="card-body row text-center">
+                      <div class="col">
+                        <div id="linkedin_connections" class="text-value-xl"></div>
+                        <div class="text-uppercase text-muted small">connections</div>
+                      </div>
+                      <div class="c-vr"></div>
+                      <div class="col">
+                        <div id="linkedin_posts" class="text-value-xl"></div>
+                        <div class="text-uppercase text-muted small">posts</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+              </div>
+              <!-- /.row-->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header">Traffic &amp; Sales</div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="row">
+                            <div class="col-6">
+                              <div class="c-callout c-callout-info"><small class="text-muted">Teachers</small>
+                                <div id="stat_teachers" class="text-value-lg"></div>
+                              </div>
+                            </div>
+                            <!-- /.col-->
+                            <div class="col-6">
+                              <div class="c-callout c-callout-danger"><small class="text-muted">Kids</small>
+                                <div id="stat_kids" class="text-value-lg"></div>
+                              </div>
+                            </div>
+                            <!-- /.col-->
+                          </div>
+                          <!-- /.row-->
+                          <hr class="mt-0">
+                          <p class="lead">Attendance</p>
+                          <hr>
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Monday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Tuesday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Wednesday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 71%" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 76%" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Thursday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Friday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 77%" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Saturday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 46%" aria-valuenow="46" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.col-->
+                        <div class="col-sm-6">
+                          <div class="row">
+                            <div class="col-6">
+                              <div class="c-callout c-callout-warning"><small class="text-muted">Boys</small>
+                                <div id="stat_boys" class="text-value-lg"></div>
+                              </div>
+                            </div>
+                            <!-- /.col-->
+                            <div class="col-6">
+                              <div class="c-callout c-callout-success"><small class="text-muted">Girls</small>
+                                <div id="stat_girls" class="text-value-lg"></div>
+                              </div>
+                            </div>
+                            <!-- /.col-->
+                          </div>
+                          <!-- /.row-->
+                          <hr class="mt-0">
+                          <div class="progress-group">
+                            <div class="progress-group-header">
+                              <div id="canvas-gender" style="width: 80%">
+                                  <canvas id="gender-pie-chart"></canvas>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.col-->
+                      </div>
+                      <!-- /.row--><br>
+                      
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+              </div>
+              <!-- /.row--><!-- /.row-->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header">Demographics</div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="progress-group">
+                            <div class="progress-group-header">
+                              <div id="canvas-age" style="width: 80%">
+                                  <canvas id="age-doughnut-chart"></canvas>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.col-->
+                        <div class="col-sm-6">
+                          <div class="progress-group">
+                            <div class="progress-group-header">
+                              <div id="canvas-subjects" style="width: 80%">
+                                  <canvas id="subjects-polar-area-chart"></canvas>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.col-->
+                      </div>
+                      <!-- /.row--><br>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+              </div>
+              <!-- /.row-->
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer class="c-footer">
+        <div><a href="https://coreui.io">Kautilya</a> © 2019 wrap-away.</div>
+      </footer>
+    </div>
+    <!-- CoreUI and necessary plugins-->
+    <script src="vendors/pace-progress/js/pace.min.js"></script>
+    <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <!-- Plugins and scripts required by this view-->
+    <script src="vendors/@coreui/coreui-chartjs/js/coreui-chartjs.bundle.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/analytics.js"></script>
+  </body>
+
+</html>
