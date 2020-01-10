@@ -13,43 +13,82 @@
     <title>Starter Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
 
     <style type="text/css">
-    body {
-        padding-top: 50px;
-    }
 
     .starter-template {
         padding: 40px 15px;
         text-align: center;
     }
 
+    #root-container {
+        margin-top: 1em;
+    }
+
     #mapid {
         height: 480px;
+    }
+
+    #eventsListDiv {
+        padding: 1em;
     }
 </style>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    <div class="container">
+    <div id="root-container" class="container">
         <div class="row">
             <div class="col-md-6">
-
-                <h1>Events happening near you.</h1>
-                <p class="lead">Using the map, you can find all of the interesting events happening nearby you such as Meetups, Conferences, 
-                Re-training, donation, etc.</p>
+                <div class="card bg-dark">
+                    <div class="card-body text-white">
+                        <h1 class="card-title">Events happening near you.</h1>
+                        <p class="lead card-text">Using the map, you can find all of the interesting events happening nearby you such as Meetups, Conferences, 
+                        Re-training, donation, etc.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-6">
-                <h1>Your Location</h1>
-                <p class="lead">Please give permissions to allow the app to use your localtion coordinates to offer you a localised view of the map.</p>
-                <button id="location_perm_button" class="btn btn-success">Locate Me</button>
-                <hr>
+                <div class="card bg-dark">
+                    <div class="card-body text-white">
+                        <h1 class="card-title">Your Location</h1>
+                        <p class="lead card-text">Please give permissions to allow the app to use your localtion coordinates to offer you a localised view of the map.</p>
+                        <button id="location_perm_button" class="btn btn-success">Locate Me</button>
+                    </div>
+                </div>
+                <br>
                 <p id="latitude"></p>
                 <p id="longitude"></p>
             </div>
@@ -58,25 +97,25 @@
         <br>
 
         <div class="row">
-            <div id="eventsListDiv" class="col-md-3">
-                <h3>Events:</h3>
+            <div class="col-md-3">
+                <div id="eventsListDiv" class="card">
+                    <!-- <div class="card-text"> -->
+                        <h3 class="card-title">Events:</h3>                        
+                    <!-- </div> -->
+                </div>
             </div>
 
             <div class="col-md-9">
                 <div id="mapid"></div>
             </div>
-        </div>
-        <!-- /.container -->
+            </div>        <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+            <script src="index.js"></script>
+        </body>
 
-
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-        crossorigin=""></script>
-        <script src="index.js"></script>
-    </body>
-
-</html>
+        </html>

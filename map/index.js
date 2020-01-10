@@ -9,7 +9,7 @@ location_perm_button.onclick = function() {
     document.getElementById('longitude').innerHTML = "Longitude: " + startPos.coords.longitude;
     
     my_map = enable_map(startPos.coords.latitude, startPos.coords.longitude)
-    get_events_nearby(mymap, startPos.coords.latitude, startPos.coords.longitude)
+    get_events_nearby(my_map, startPos.coords.latitude, startPos.coords.longitude)
 };
 
 var geoError = function(error) {
@@ -70,7 +70,7 @@ function create_circle(map, latitude, longitude, color, caption) {
         color: color,
         fillColor: '#f03',
         fillOpacity: 0.5,
-        radius: 100
+        radius: 120
   }).addTo(map);
   marker.bindPopup(caption)
 }
@@ -89,14 +89,15 @@ function get_events_nearby(map, latitude, longitude) {
     map_data.forEach(function(row) {
       create_circle(
         map, 
-        get_random_close_coordinates(latitude, 100), 
-        get_random_close_coordinates(longitude, 10), 
+        get_random_close_coordinates(latitude, 50), 
+        get_random_close_coordinates(longitude, 20), 
         type_color_dict[row.type], 
         row.name
       )
     })
   })
 }
+
 
 function get_random_close_coordinates(coordinate, precision) {
   random_val = Math.random()
@@ -120,10 +121,12 @@ async function Get(url) {
 
 function show_list(rows) {
   eventsListDiv = document.getElementById("eventsListDiv")
-
   var eventsList = document.createElement('ul')
+  eventsList.setAttribute("class", "list-group")
+  eventsList.setAttribute("class", "list-group-flush")
   rows.forEach(function(row) {
     event = document.createElement("li")
+    event.setAttribute("class", "list-group-item")
     event.innerText = row.name
     eventsList.appendChild(event)
   })
