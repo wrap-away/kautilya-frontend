@@ -32,7 +32,7 @@ function showSyllabus(grade) {
         details.appendChild(row)
 
         var col_md_6_1 = document.createElement('div')
-        col_md_6_1.setAttribute("class", "col-md-6")
+        col_md_6_1.setAttribute("class", "col-md-6 pb-5")
         row.appendChild(col_md_6_1)
 
 
@@ -40,8 +40,11 @@ function showSyllabus(grade) {
         col_md_6_2.setAttribute("class", "col-md-6 pb-4")
         row.appendChild(col_md_6_2)
 
+        var card = document.createElement('div')
+        card.setAttribute("class", "card")
+        card.style.width = "18rem"
 
-        var subjectHeader = document.createElement('h3')
+        
         var subjectTitle = document.createElement('a')
         subjectTitle.innerText = subject
         subjectLink = data[grade][key][subject].link
@@ -55,18 +58,23 @@ function showSyllabus(grade) {
         }
         
         subjectTitle.setAttribute("target", "_blank")
-        subjectHeader.appendChild(subjectTitle)
 
-        col_md_6_1.appendChild(subjectHeader)
+        cardHeader = document.createElement('div')
+        cardHeader.setAttribute("class", "card-header")
+        cardHeader.appendChild(subjectTitle)
+        card.appendChild(cardHeader)
         
         var chaptersList = document.createElement('ul')
+        chaptersList.setAttribute("class", "list-group list-group-flush")
         chapters = data[grade][key][subject].chapters
         for (chapter of chapters) {
             chapterName = document.createElement('li')
+            chapterName.setAttribute("class", "list-group-item")
             chapterName.innerText = chapter
             chaptersList.appendChild(chapterName)
         }
-        col_md_6_1.appendChild(chaptersList)
+        card.appendChild(chaptersList)
+        col_md_6_1.appendChild(card)
 
         if (youtubePlaylistRegex.test(subjectLink) && subjectLink) {
             iframe = document.createElement("iframe")
