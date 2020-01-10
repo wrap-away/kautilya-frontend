@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Events Nearby (Map)</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin="" />
+
+  <style type="text/css">
+
+  .starter-template {
+    padding: 40px 15px;
+    text-align: center;
+  }
+
+  #root-container {
+    margin-top: 1em;
+  }
+
+  #mapid {
+    height: 480px;
+  }
+</style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="root-container" class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="jumbotron border border-dark">
+          <h1 class="display-4">Kautilya</h1>
+          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <hr class="my-4">
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          </p>
+        </div>
+        <div id="ngo-table" class="jumbotron border border-dark">
+          <h1 class="display-4">NGO List</h1>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="jumbotron border border-dark">
+          <h2>Popular NGO posts: </h2>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://i.imgur.com/5L26nho.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Make A Difference</h5>
+                  <p class="card-text">MAD Holistic Child support program works to provide shelter and education to homeless children from vulnerable backgrounds. This program has shown great impact over the last 3 years.</p>
+                  <a href="https://www.giveindia.org/program/Support-living-expenses-of-children-in-a-shelter-home" class="btn btn-primary">Know More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://i.imgur.com/yVMvKME.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">The Akshaya Patra Foundation</h5>
+                  <p class="card-text">The Akshaya Patra Foundation helps underprivileged children by providing them with a
+                    healthy meal. The surest way to break this cycle of poverty is through education.
+                  Education can improve the quality of life of a family for future generations.</p>
+                  <a href="https://www.giveindia.org/program/Sponsor-mid-day-meals-to-children-in-Rajasthan" class="btn btn-primary">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://i.imgur.com/yKSCHY6.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Teach For India</h5>
+                  <p class="card-text">n 2006, 17 years after starting the Akanksha Foundation, Shaheen felt compelled to address the issue of educational inequity at scale. As she thought through the solution, she believed that the answer lay in a people's movement that needed to come together to provide every child in India an excellent education.</p>
+                  <a href="#" class="btn btn-primary">Know More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://i.imgur.com/HLUKnpj.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Pratham</h5>
+                  <p class="card-text">Pratham is an innovative learning organization created to improve the quality of education in India. Established in 1995 to provide education to children in the slums of Mumbai, Pratham has grown in both scope and scale, with programs today reaching children and youth across the country.</p>
+                  <a href="https://www.pratham.org/" class="btn btn-primary">Know More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Bootstrap core JavaScript    
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+  <script src="mainpage.js"></script>
+</body>
+
+</html>

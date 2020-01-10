@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <title>NGO | Kautilya</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="jitsiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body text-center" id='jitsiParent'>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <a class="navbar-brand" href="#">Kautilya</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <!-- <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">NGO<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+          </ul> -->
+          <span class="navbar-text">
+            Our vision, Empowering children
+          </span>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class='container'>
+            <h1 id='NGOName' class="display-3"></h1>
+            <span id='NGODesc' class='lead'></span>
+        </div>
+    </div>
+
+    <div class='container-fluid'>
+        <div class='row'>
+            <div class='col-sm-12 col-md-3 col-lg-3 col-xl-3'>
+                <div class='ml-3'>
+                    <button type="button" id='membersButton' class="btn border bg-dark text-light btn-lg btn-block">Members</button>
+                    <button type="button" id='listingsButton' class="btn border bg-dark text-light btn-lg btn-block">Posts</button>
+                    <button type="button" id='conferencesButton' class="btn border bg-dark text-light btn-lg btn-block">Conferences</button>
+                    <button type="button" id='donationsButton' class="btn border bg-dark text-light btn-lg btn-block">Donations</button>
+                </div>
+            </div>
+            <div class='col-sm-12 col-md-9 col-lg-9 col-xl-9'>
+                <div id='ngoContent' class='ml-3'>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://meet.jit.si/external_api.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" 
+        integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" 
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
