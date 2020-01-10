@@ -127,8 +127,8 @@ function create_pie_chart(data) {
 					girl_percent
 				],
 				backgroundColor: [
-					"yellow",
-					"green",
+					"#550D96",
+					"#E6AF2E",
 				],
 				label: 'Gender Demographics'
 			}],
@@ -150,11 +150,11 @@ function create_doughnut_chart(data) {
 			datasets: [{
 				data: data.stat_age_values,
 				backgroundColor: [
-					"red",
-					"orange",
-					"yellow",
-					"green",
-					"blue",
+					"#C12727",
+					"#591834",
+					"#507511",
+					"#F2A115",
+					"#084C61",
 				],
 				label: 'Dataset 1'
 			}],
@@ -183,11 +183,11 @@ function create_polar_area_chart(data) {
 			datasets: [{
 				data: data.stat_subject_hours,
 				backgroundColor: [
-					"red",
-					"orange",
-					"yellow",
-					"green",
-					"blue",
+					"#C12727",
+					"#591834",
+					"#507511",
+					"#F2A115",
+					"#084C61",
 				],
 				label: 'My dataset' // for legend
 			}],
