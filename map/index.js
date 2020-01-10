@@ -122,8 +122,7 @@ async function Get(url) {
 function show_list(rows) {
   eventsListDiv = document.getElementById("eventsListDiv")
   var eventsList = document.createElement('ul')
-  eventsList.setAttribute("class", "list-group")
-  eventsList.setAttribute("class", "list-group-flush")
+  eventsList.setAttribute("class", "list-group list-group-flush")
   rows.forEach(function(row) {
     event = document.createElement("li")
     event.setAttribute("class", "list-group-item")
