@@ -1,6 +1,7 @@
 var data
 
 $(document).ready(function() {
+    $('#cc').hide()
     getData().then(function(response) {
         data = response
         populateSidebar()
@@ -20,6 +21,7 @@ function populateSidebar(){
 }
 
 function showSyllabus(grade) {
+    $('#cc').show()
     var details = document.getElementById("details")
     deleteChildNodes(details)
     var subjects = Object.values(data[grade])[0]
